@@ -33,7 +33,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@18.141.194.211 << 'EOF'
             # pastikan directorynya ada
-            mkdir -p /var/www/mywebsite/runningCICD
+            sudo mkdir -p /var/www/mywebsite/runningCICD
             cd /var/www/mywebsite/runningCICD
 
             # pull source terbaru
@@ -46,7 +46,7 @@ jobs:
             npm run build
 
             # copy hasil build ke direktori nginx
-            rm -rf /var/www/html/*
+            sudo rm -rf /var/www/html/*
             cp -r dist/* /var/www/html/
 
             # restart nginx supaya file baru dibaca
