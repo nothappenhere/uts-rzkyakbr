@@ -37,7 +37,8 @@ jobs:
             cd /var/www/mywebsite/runningCICD
 
             # pull source terbaru
-            git pull origin main
+            git clone https://github.com/nothappenhere/uts-rzkyakbr.git
+            cd uts-rzkyakbr
 
             # install dependency nodejs
             npm install
