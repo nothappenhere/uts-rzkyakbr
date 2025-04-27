@@ -37,18 +37,19 @@ jobs:
             cd /var/www/mywebsite/runningCICD
 
             # pull source terbaru
-            git clone https://github.com/nothappenhere/uts-rzkyakbr.git
+            sudo rm -rf uts-rzkyakbr
+            sudo git clone https://github.com/nothappenhere/uts-rzkyakbr.git
             cd uts-rzkyakbr
 
             # install dependency nodejs
-            npm install
+            sudo npm install
 
             # build project
-            npm run build
+            sudo npm run build
 
             # copy hasil build ke direktori nginx
             sudo rm -rf /var/www/html/*
-            cp -r dist/* /var/www/html/
+            sudo cp -r dist/* /var/www/html/
 
             # restart nginx supaya file baru dibaca
             sudo systemctl restart nginx

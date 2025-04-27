@@ -11,7 +11,7 @@ function getRandomDiscount(max) {
 // Fetch product data dari /product
 const getProduct = async () => {
   try {
-    const response = await fetch('http://localhost:8000/product')
+    const response = await fetch('http://18.141.194.211/api/product')
     const data = await response.json()
 
     // Setiap product dikasih property baru: discount

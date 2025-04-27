@@ -46,7 +46,7 @@ const handleSubmit = async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:8000/product/add', {
+    const response = await fetch('http://18.141.194.211/api/product/add', {
       method: 'POST',
       body: formData,
     })
@@ -79,7 +79,7 @@ const handleSubmit = async () => {
 
 const fetchFiles = async () => {
   try {
-    const response = await fetch('http://localhost:8000/files')
+    const response = await fetch('http://18.141.194.211/api/files')
     if (!response.ok) {
       throw new Error('Gagal mengambil daftar file')
     }
