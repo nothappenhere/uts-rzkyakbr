@@ -36,17 +36,17 @@ jobs:
             fi
 
             # Buat file .env baru
-          cat <<EOT > .env
-          AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-          AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-          AWS_REGION=${AWS_REGION}
-          AWS_BUCKET=${AWS_BUCKET}
-
-          POSTGRES_HOST=${POSTGRES_HOST}
-          POSTGRES_USERNAME=${POSTGRES_USERNAME}
-          POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-          POSTGRES_DATABASE=${POSTGRES_DATABASE}
-          EOT
+            sudo bash -c 'cat <<EOT > .env
+            AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+            AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+            AWS_REGION=${AWS_REGION}
+            AWS_BUCKET=${AWS_BUCKET}
+            
+            POSTGRES_HOST=${POSTGRES_HOST}
+            POSTGRES_USERNAME=${POSTGRES_USERNAME}
+            POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            POSTGRES_DATABASE=${POSTGRES_DATABASE}
+            EOT'
 
             # Install dependency
             sudo npm install
@@ -62,7 +62,7 @@ jobs:
             sudo systemctl restart nginx
           EOF
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.PRIVATEKEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.PrivateKey }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
