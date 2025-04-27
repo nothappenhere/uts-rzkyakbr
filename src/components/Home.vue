@@ -11,7 +11,7 @@ import { RouterLink } from 'vue-router'
         <div class="bg-[#202B3C] p-8 md:p-12 lg:px-16 lg:py-24">
           <div class="mx-auto max-w-xl text-center">
             <h2 class="text-2xl font-bold text-white md:text-3xl mb-5">
-              Powerful Product Management with AWS Cloud
+              Powerful Product Management with AWS Cloud v1
             </h2>
 
             <p class="hidden text-white/90 sm:mt-4 sm:block">
